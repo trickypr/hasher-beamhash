@@ -1,0 +1,33 @@
+name: Build & Test Package
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  linux-node10:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: sudo apt install libboost-dev
+      - run: npm install
+      - run: npm test
+
+  linux-node12:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: sudo apt install libboost-dev
+      - run: npm install
+      - run: npm test
