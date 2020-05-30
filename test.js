@@ -2,6 +2,8 @@ const beamhash = require('./index');
 
 verify2Valid();
 verify2Invalid();
+verify3Valid();
+verify3Invalid();
 
 
 function verify2Valid() {
@@ -23,6 +25,7 @@ function verify2Valid() {
     }
 }
 
+
 function verify2Invalid() {
 
     console.log('Verify invalid BeamHashII');
@@ -32,6 +35,46 @@ function verify2Invalid() {
     const outputBuf = Buffer.alloc(104, 0);
 
     const isValid = beamhash.verify2(inputBuf, nonceBuf, outputBuf);
+
+    if (isValid) {
+        console.log('FAIL');
+        process.exit(-1);
+    }
+    else {
+        console.log('PASS');
+    }
+}
+
+
+function verify3Valid() {
+
+    console.log('Verify valid BeamHashIII');
+
+    const inputBuf = Buffer.from('fc40996a518c221384c9f2542ca811cd66c4ccddb001ef40b9f9ba059c20352e', 'hex');
+    const nonceBuf = Buffer.from('b32c7d4f07a3001c', 'hex');
+    const outputBuf = Buffer.from('0fc81c684be229c36b844ef8299a9744dbb8727276bff8cbd610fa7414fb6cfd67b92586f84f8bffaeeb99266994d79da3fb026a24128b84901f244b08ee6b6b954372fcb0a7d33318da6bf1854ae48f94fe8af2d3147bdc7302cc12daa1a306511122a700000000', 'hex');
+
+    const isValid = beamhash.verify3(inputBuf, nonceBuf, outputBuf);
+
+    if (isValid) {
+        console.log('PASS');
+    }
+    else {
+        console.log('FAIL');
+        process.exit(-1);
+    }
+}
+
+
+function verify3Invalid() {
+
+    console.log('Verify invalid BeamHashIII');
+
+    const inputBuf = Buffer.from('fc40996a518c221384c9f2542ca811cd66c4ccddb001ef40b9f9ba059c20352e', 'hex');
+    const nonceBuf = Buffer.from('b32c7d4f07a3001c', 'hex');
+    const outputBuf = Buffer.alloc(104, 0);
+
+    const isValid = beamhash.verify3(inputBuf, nonceBuf, outputBuf);
 
     if (isValid) {
         console.log('FAIL');
