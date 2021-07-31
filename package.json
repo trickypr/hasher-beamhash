@@ -12,16 +12,13 @@
   "scripts": {
     "test": "node test"
   },
-  "homepage": "https://github.com/MintPond/hasher-beamhash",
+  "homepage": "https://github.com/trickypr/hasher-beamhash",
   "bugs": {
-    "url": "https://github.com/MintPond/hasher-beamhash/issues"
+    "url": "https://github.com/trickypr/hasher-beamhash/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MintPond/hasher-beamhash.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "url": "https://github.com/trickypr/hasher-beamhash.git"
   },
   "engines": {
     "node": ">=10.17.0"
