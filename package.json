@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "BeamHash algorithm hashing and verification functions for NodeJS.",
   "main": "index.js",
-  "author": "JCThePants",
+  "author": "trickypr",
   "license": "MIT",
   "dependencies": {
     "bindings": "^1.3.0",
