@@ -1,6 +1,6 @@
 {
   "name": "trickypr-hasher-beamhash",
-  "version": "0.1.1",
+  "version": "1.0.2",
   "description": "BeamHash algorithm hashing and verification functions for NodeJS.",
   "main": "index.js",
   "author": "trickypr",
